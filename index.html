@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Plutonium Programming Language</title>
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#" class="nav__logo">
+            <i class="ri-planet-fill"></i>Plutonium <!-- https://remixicon.com/ -->
+         </a>
+
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li class="nav__item">
+                  <a href="index.html" class="nav__link">Home</a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="download.html" class="nav__link">Download</a>
+               </li>
+
+               <!-- <li class="nav__item">
+                     <a href="#" class="nav__link">Documentation</a>
+                  </li> -->
+
+               <li class="nav__item">
+                  <a href="Contact.html" class="nav__link">Contact</a>
+               </li>
+            </ul>
+            <a href="assets\learn\index.html" class="nav__button">Documentation</a>
+
+            <!-- Close button -->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
+            </div>
+         </div>
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-apps-2-line"></i>
+         </div>
+
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+         <div class="home__container container">
+            <div class="home__content">
+               <h3 class="home__subtitle">
+                  Official Website Of Plutonium
+               </h3>
+
+               <h1 class="home__title">
+                  <span>
+                     Start Exploring <br>
+                     Plutonium
+                  </span>
+
+                  <img src="assets/img/line.svg" alt="">
+               </h1>
+
+               <p class="home__description">
+                  Plutonium is a dynamically typed interpreted language that is designed to be simple and efficient
+               </p>
+
+               <a href="assets\learn\index.html" class="home__button">
+                  Get started
+               </a>
+            </div>
+
+            <div class="home__images">
+               <img src="assets/img/points-space.svg" alt="image" class="home__points">
+               <img src="assets/img/planet.svg" alt="image" class="home__planet-2">
+               <img src="assets/img/planet.svg" alt="image" class="home__planet-1">
+               <img src="assets/img/rocket.svg" alt="image" class="home__rocket">
+            </div>
+         </div>
+
+         <img src="assets/img/clouds-1.svg" alt="iamge" class="home__cloud-1">
+         <img src="assets/img/clouds-2.svg" alt="iamge" class="home__cloud-2">
+      </section>
+      
+      <div class="container-fluid">
+         <link rel="stylesheet" href="css/theme.css">
+         <div id="slideshow">
+            <pre style="min-width: 50%;" class="plutoniumcode"><span class="keyword1">var</span> <span class="id">k</span><span class="operator">&#61;</span><span class="num">1</span>
+   <span class="keyword1">while</span>(<span class="id">k</span><span class="operator">&#60;&#61;</span><span class="num">15</span>)
+   {
+     <span class="keyword1">if</span>(<span class="id">k</span><span class="operator">&#37;</span><span class="num">3</span><span class="operator">&#61;&#61;</span><span class="num">0</span> <span class="operator">&#97;&#110;&#100;</span> <span class="id">k</span><span class="operator">&#37;</span><span class="num">5</span><span class="operator">&#61;&#61;</span><span class="num">0</span>)
+       <span class="id">println</span>(<span class="string">&quot;FizzBuzz&quot;</span>)
+     <span class="keyword1">else</span> <span class="keyword1">if</span>(<span class="id">k</span><span class="operator">&#37;</span><span class="num">5</span><span class="operator">&#61;&#61;</span><span class="num">0</span>)
+       <span class="id">println</span>(<span class="string">&quot;Buzz&quot;</span>)
+     <span class="keyword1">else</span> <span class="keyword1">if</span>(<span class="id">k</span><span class="operator">&#37;</span><span class="num">3</span><span class="operator">&#61;&#61;</span><span class="num">0</span>)
+       <span class="id">println</span>(<span class="string">&quot;Fizz&quot;</span>)
+     <span class="keyword1">else</span>
+       <span class="id">println</span>(<span class="id">k</span>)
+     <span class="id">k</span><span class="operator">&#43;&#61;</span><span class="num">1</span>
+   }</pre>
+         </div>
+      </div>
+   </main>
+
+   <!--=============== GSAP ===============-->
+   <script src="assets/js/gsap.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plutonium Programming Language</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font AweSome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"5
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 1) BootStrap Link 2) JS link to use Bootstrap Functionality 3)  CSS Stylesheets Link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="pageIndex.js"></script>
+    <script>
+      var currPage = -1;
+      function redirect(url)
+      {
+        window.location.href = url;
+      }
+      function addLinks()
+      {
+        var div = document.getElementById('sidebarlinks');
+        var total = pageIndex["total"];
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        console.log( page );
+        for(var i=0;i<total;i++)
+        {
+          if(page == pageIndex[i][1])
+            currPage = i;
+          const link = document.createElement("a");
+          link.innerHTML = pageIndex[i][0];
+          link.href = pageIndex[i][1];
+          link.classList.add("sidebarlink");
+          const br = document.createElement("br");
+          div.appendChild(link);
+          div.appendChild(br);
+        }
+      }
+      function nextPage()
+      {
+        var i = currPage+1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+      function prevPage()
+      {
+        var i = currPage-1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+    </script>
+  </head>
+  <style>
+body{
+  font-family: "Montserrat";
+}
+#Tittle{
+
+  background-color: #5D3891;
+  color: #ffff;
+}
+.R1{
+  background-color: #5D3891;
+}
+
+
+/* Navbar */
+
+.navbar{
+
+  /* position: absolute; */
+
+}
+h1,h2,h3,h4,h5,h6,i
+{
+  color: black;
+}
+body
+{
+  color: #8f8f8f;
+
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin-left: 1rem; */
+}
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:  "Montserrat";
+  font-weight: 300;
+}
+
+
+p{
+  color: #8f8f8f;
+
+}
+
+.plutoniumcode
+{
+  color:white;
+  min-width:50%;
+}
+
+.icon{
+  color: #000;
+  margin-bottom: 1rem;
+}
+#sidebarlinks a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+#sidebarlinks a:hover{
+  background-color: #555;
+  color: white;
+}
+
+  </style>
+  <body onload="addLinks()">
+
+    <section id="Tittle">
+      <div class="container-fluid">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <a class="navbar-brand" href="/index.html">Plutonium</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/downloads">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/learn">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contacts.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Topics</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="sidebarlinks">
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container" style="text-align: justify;">
+      <br>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i style="color:white" class="fa-solid fa-align-justify"></i> Table of Contents
+      </button><br><br><br>
+      <h1>The Standard Library</h1><br>
+      Plutonium interpreter provides a very minimal list of built-in functions. Because these built-
+      in functions are always loaded when the interpreter starts .Loading a lot of functions most
+      of which will never be used is a bad idea so modules are introduced . A module is also
+      some code (functions and classes) which you can import and use. Modules are not
+      imported by default. You have to tell plutonium which module to load. By using this module
+      system you only load what you are going to use.<br><br> There are two types of modules in
+      Plutonium.<br><br>
+      <h3>Plutonium Code files:</h3><br>
+      These are simple plutonium files having extension “.plt”. In topic Multifile Programs you
+      were taught how to import other plutonium files into your program and use them. The same
+      concepts apply here. There you created a new plutonium file of your own and imported it
+      into current program. There are a few plutonium files in C:\plutonium\std
+      These come along with the interpreter and can be imported and used as well. These files
+      contain functions for common algorithms. Currently the std folder has files algo.plt,
+      json.plt and ll.plt
+      To import any of these files you can use statement<br><br>
+      <pre class="plutoniumcode"><span class="keyword2">import</span> <span class="string">&quot;C:\\plutonium\\std\\algo.plt&quot;</span> <span class="comment"># windows</span>
+<span class="keyword2">import</span> <span class="string">&quot;/opt/plutonium/std/algo.plt&quot;</span> <span class="comment">#linux</span>
+        
+<span class="comment"># or you can use following syntactic sugar</span>
+        
+<span class="keyword2">import</span> <span class="id">std</span><span class="operator">&#47;</span><span class="id">algo</span><span class="operator">&#46;</span><span class="id">plt</span> <span class="comment"># works on both windows and linux</span></pre>
+<br>      
+All functions of each of these
+      files are inside a namespace having the same name as the file. For example,to use
+      bubbleSort function from algo.plt you would use name <b>algo::bubbleSort()</b>
+      <br><br>
+      Following is some documentation about these libraries<br><br>
+      <h4>algo.plt</h4>
+      <ul>
+        <li>bubbleSort(arr) → sorts the array</li>
+        <li>selectionSort(arr) → sorts the array</li>
+        <li>insertionSort(arr) → sorts the array</li>
+        <li>binarySearch(arr,x) → searches the sorted array for element x</li>
+        <li>linearSearch(arr,x) → searches the array for element x</li>
+        <li>quickSort(arr,l,h) → sorts the array from index l to index h</li>
+        <li>mergeSort(arr,l,h) → sorts the array from index l to index h</li>
+        <li>subList(l,h,list) → returns sublist of list starting from index l to index h</li>
+        <li>filter(fn,A) → returns a list of all those elements of list A that make fn function return true</li>
+        <li>apply(fn,list) → applies fn function to all elements of the list</li>
+        <li>Max(list) → returns the max from list</li>
+        <li>Min(list) → returns the min from list•</li>
+        <li>count(fn,list) → returns the number of elements in list that make fn function true</li>
+        <li>first_mismatch(list1,list2) → returns the index where first mismatch occurs</li>
+        <li>transpose(matrix) → returns the transpose of matrix represented as 2d list</li>
+        <li>count_set_bits(x) → returns number of bits set in x</li>
+        <li>isPowerOfTwo(x) → returns true is x is power of 2</li>
+        <li>median(list) → returns the median</li>
+        <li>hex(n) → returns a string representing hex value of n</li>
+        <li>octal(n) → returns a string representing octal value of n</li>
+        <li>bin(n) → returns a string representing binary value of n</li>
+        <li>encodeASCII(str) → encodes a string as ascii and returns a bytearray</li>
+        <li>decodeASCII(bytes) → decodes a bytearray and returns an ascii string</li>
+        <li>loads(str) → returns a dictionary after parsing the string json</li>
+        <li>dumps(json) → returns a string json after converting the json dictionary      </li>
+        </ul>
+      <h4>ll.plt</h4>
+      <br>
+      This file implements a doubly linked list. It has two classes <b>Iterator</b> and <b>List</b>. The <b>List</b>
+      class creates instances of <b>Iterator</b> class. You won't have to create objects of <b>Iterator</b> class ever.
+      <br><br>
+      The Iterator class has following methods
+      <br><br>
+      <ul>
+        <li>next() → moves the iterator to next node</li>
+        <li>prev() → moves the iterator to previous node</li>
+        <li>value() → returns the value of current node iterator is pointing to</li>
+        <li>__eq__(rhs) → equality operator overloaded</li>
+        <li>__noteq__(rhs) → inequality operator overloaded</li>
+        </ul>
+        <br>
+      The List class has following methods
+      <br>
+      <ul>
+        <li>__construct__() → constructor takes 0 arguments</li>
+        <li>insert(it,val) → inserts the val at node pointed by iterator and the previous node is pushed to the right</li>
+        <li>setvalue(it,val) → sets the value of node pointed by iterator</li>
+        <li>erase(it) → erases the node pointed by iterator</li>
+        <li>push_back(val) → adds value at the end of the list</li>
+        <li>push_front(val) → adds value the start of the list</li>
+        <li>begin() → returns an iterator pointing to first node</li>
+        <li>end() → returns an iterator pointing to dummy tail node</li>
+        </ul>
+       <br> 
+      Example<br>
+      <br>
+      <pre class="plutoniumcode"><span class="keyword2">import</span> <span class="id">std</span><span class="operator">&#47;</span><span class="id">algo</span><span class="operator">&#46;</span><span class="id">plt</span>
+<span class="keyword2">import</span> <span class="id">std</span><span class="operator">&#47;</span><span class="id">ll</span><span class="operator">&#46;</span><span class="id">plt</span>
+<span class="keyword1">var</span> <span class="id">arr</span> <span class="operator">&#61;</span> [<span class="num">5</span>,<span class="num">4</span>,<span class="num">3</span>,<span class="num">2</span>,<span class="num">1</span>]
+<span class="id">algo::selectionSort</span>(<span class="id">arr</span>)
+<span class="id">println</span>(<span class="id">arr</span>)
+<span class="keyword1">var</span> <span class="id">nums</span> <span class="operator">&#61;</span> <span class="id">ll::List</span>()
+<span class="id">nums</span><span class="operator">&#46;</span><span class="id">insert</span>(<span class="id">nums</span><span class="operator">&#46;</span><span class="id">end</span>(),<span class="num">1</span>)
+<span class="id">nums</span><span class="operator">&#46;</span><span class="id">insert</span>(<span class="id">nums</span><span class="operator">&#46;</span><span class="id">end</span>(),<span class="num">2</span>)
+<span class="id">nums</span><span class="operator">&#46;</span><span class="id">insert</span>(<span class="id">nums</span><span class="operator">&#46;</span><span class="id">end</span>(),<span class="num">3</span>)
+<span class="keyword1">var</span> <span class="id">it</span> <span class="operator">&#61;</span> <span class="id">nums</span><span class="operator">&#46;</span><span class="id">begin</span>()
+<span class="keyword1">while</span>(<span class="id">it</span><span class="operator">&#33;&#61;</span><span class="id">nums</span><span class="operator">&#46;</span><span class="id">end</span>())
+{
+    <span class="id">println</span>(<span class="id">it</span><span class="operator">&#46;</span><span class="id">value</span>())
+    <span class="id">it</span><span class="operator">&#46;</span><span class="id">next</span>()
+}</pre>
+      <br>
+      <h3>Native Modules:</h3><br>
+      These are modules written in C++ and not in Plutonium. These modules are present in <b>C:\
+      plutonium\modules\</b> or <b>/opt/plutonium/modules</b> depending on the OS. 
+      These shared objects(dlls in case of windows) .To import any of these you just simply use
+      the following syntax:<br><br>
+      <pre class="plutoniumcode"><span class="keyword2">import</span> <span class="id">modulename</span></pre>
+      <br>
+      Note that no “.plt” or double quotes are added here. After loading a native module you use
+      the member operator <b>'.'</b> to access it's members like you do with objects. For example, to
+      call sin function from math module you write <b>math.sin(@pi/2)</b>. Currently plutonium has
+      following native modules:<br><br>
+      <h4>math</h4>
+      <br>
+      
+      The math module provides functions related to maths. It has no classes. Following are it’s
+      members:
+      <br><br>
+      <ul>
+        <li>sin(x) → returns sin of x</li>
+        <li>cos(x) → returns cos of x</li>
+        <li>tan(x) → returns tan of x</li>
+        <li>asin(x) → returns sin inverse of x</li>
+        <li>acos(x) → returns cos inverse of x</li>
+        <li>atan(x) → returns tan inverse of x</li>
+        <li>sinh(x) → returns sin hyperbolic of x</li>
+        <li>cosh(x) → returns cos hyperbolic of x</li>
+        <li>tanh(x) → returns tan hyperbolic of x</li>
+        <li>asinh(x) → returns hyperbolic sin inverse of x</li>
+        <li>acosh(x) → returns hyperbolic cos inverse of x</li>
+        <li>atanh(x) → returns hyperbolic tan inverse of x</li>
+        <li>log(x) → returns natural log of x</li>
+        <li>log10(x) → returns base 10 log of x</li>
+        <li>trunc(x) → truncates and returns float x</li>
+        <li>round(x) → rounds and returns float x</li>
+        <li>ceil(x) → returns ceil of float x</li>
+        <li>floor(x) → returns floor of float x</li>
+        <li>radians(x) → converts x from degrees to radians</li>
+        <li>sqrt(x) → returns sqrt of x</li>
+        </ul>
+        
+
+      <h4>regex</h4><br>
+      regex module provides regular expression support in plutonium. It has following 3
+      functions:<br><br>
+      <ul>
+        <li>search(str,patt) → searches the parts of string that match regex and returns a list of these parts</li>
+        <li>match(str,patt) → returns true if string matches regex pattern</li>
+        <li>replace(str,patt) → replaces parts of string that match regex pattern</li>
+      </ul>
+        
+      <h4>conio</h4><br>
+      conio module provides old conio.h functions .It has following 2 functions:<br><br>
+      <ul>
+      <li>kbhit() → returns true is key is pressed</li>
+      <li>getch() → gets a key from user and returns it's scan code as integer</li>
+      </ul>
+      <h4>console</h4><br>
+      console module provides some winapi functions to work with the console. It has following 4
+      functions:<br><br>
+      <ul>
+      <li>hide() → hides console windows</li>
+      <li>show() → shows console window</li>
+      <li>setTextAttribute(k) → sets text attribute</li>
+      <li>gotoxy(x,y) → moves cursor to xth row and yth column</li>
+      <li>getDimensions() → returns a list containing number of rows and columns in console</li>
+      </ul>
+      <h4>bignum</h4><br>
+      bignum module provides arbitrary precision integers support in plutonium. It has only one
+      class called bignum.
+      Following are the members of this class:<br><br>
+      <ul>
+      <li>__construct__(x) → constructor takes a string argument containing digits only</li>
+      <li>__add__(rhs) → addition operator overloaded</li>
+      <li>__sub__(rhs)</li>
+      <li>__mul__(rhs)</li>
+      <li>__div__(rhs)</li>
+      <li>__smallerthan__(rhs)</li>
+      <li>__greaterthan__(rhs)</li>
+      <li>__smallerthaneq__(rhs)</li>
+      <li>__greaterthaneq__(rhs)</li>
+      <li>__eq__(rhs)</li>
+      <li>__noteq__(rhs)</li>
+      </ul>
+      <h4>turtle</h4><br>
+      turtle module provides turtle graphics support in plutonium. It has following functions:
+      <br><br>
+      <ul>
+        <li>setWindowSize(rows,cols) → sets the window size</li>
+        <li>setColor(r,g,b) → sets the turtle color</li>
+        <li>setBgColor(r,g,b) → sets window’s bg color</li>
+        <li>forward(k) → moves turtle k units forward</li>
+        <li>back(k) → moves k units back</li>
+        <li>left(k) → turns k degrees left</li>
+        <li>right(k) → turns k degrees right</li>
+        <li>circle(r) → draws a circle of radius r with current position as center</li>
+        <li>penUp() → lifts up the pen</li>
+        <li>penDown() → ...</li>
+        <li>done() → sets the window in idle state</li>
+        <li>setPenSize() → sets the pensize</li>
+        <li>goto(x,y) → goes to xth row and yth column without drawing anything</li>
+        <li>moveto(x,y) → goes to x,y and draws the path</li>
+        <li>show() → shows turtle</li>
+        <li>hide() → hides turtle</li>
+        <li>setSpeed(x) → sets the turtle speed(pixels per frame)</li>
+      </ul>
+      <h4>autogui</h4><br>
+      autogui module allows you to perform GUI tasks with code. It has following functions:
+      <br><br>
+      <ul>
+        <li>getMousePos() → returns current screen coordinates of mouse</li>
+        <li>mouse_leftClick(x,y) → moves to x,y and left clicks mouse</li>
+        <li>mouse_rightClick(x,y) → ..</li>
+        <li>getKeyCodes() → returns a dictionary representing the keycode of function keys</li>
+        <li>typewrite(str) → typewrites alphanumeric string</li>
+      </ul>
+      <h4>mysql</h4><br>
+      mysql module allows you to connect to a mariadb/mysql server. It has following functions:
+      <br><br>
+      <ul>
+        <li>init() → returns a connection object</li>
+        <li>real_connect(conn,host,user,pass,db,port = 3306) → connects a connection object to a mysql server. If the port is unspecified then it is 3306 by default.</li>
+        <li>query(conn,query) → Executes a query string using the established connection</li>
+        <li>store_result(conn) → returns a result object representing the result of last query executed using connection conn</li>
+        <li>nums_row(res) → returns the number of rows in the result object</li>
+        <li>num_fields(res) → returns the number of fields in the result object</li>
+        <li>fetch_row_as_str(res) → fetches a row from res and returns a list of string values</li>
+        <li>fetch_row(res) → fetches a row from res and returns a list of bytearrays</li>
+        <li>close(conn) → closes the connection</li>
+      </ul>
+      <h4>cgi</h4><br>
+      cgi module allows you to do CGI web programming in plutonium. Currently it supports GET
+      and POST(urlencoded + multipart) methods. It has following functions:
+      <br><br> 
+      <ul>
+      <li>FormData() → returns a dictionary representing the form data(html form elements’ names as keys and their values as dictionary values).</li>
+      </ul>
+      <h4>libcurl</h4><br>
+      Libcurl is a networking library originally written in C. This module is libcurl’s binding for
+      plutonium. It has following classes:<br><br>
+      <h6>Curl</h6>
+      <ul>
+        <li>__construct__() → constructor</li>
+        <li>setopt(opt,val) → sets value of an option</li>
+        <li>perform() → performs the network task and returns an integer CURLCode</li>
+        <li>getinfo(x) → Returns info</li>
+        <li>__del__() → object deletor</li>
+      </ul>
+      <h6>mime</h6>
+      <ul>
+        <li>__construct__(curlObj) → creates a mime object for a curl object and returns it</li>
+        <li>addpart() → adds a part to mime and returns a mime part object</li>
+      </ul>
+      <h6>mimepart</h6>
+      <ul>
+      <li>__construct__() → constructor</li>
+      <li>name(str) → sets the name of mimepart</li>
+      <li>data(bytes) → sets data of the mimepart. Bytes is a bytearray</li>
+      <li>filename(str) → sets filename of the mimepart.</li>
+      </ul>
+      <br>
+      Other members of this module are:
+      <br><br>
+      <ul>
+        <li>OPT_URL → some constant value</li>
+        <li>OPT_FOLLOWLOCATION → ..</li>
+        <li>OPT_VERBOSE → ..</li>
+        <li>OPT_POSTFIELDS → ..</li>
+        <li>OPT_MIMEPOST → ..</li>
+        <li>OPT_PORT → ..</li>
+        <li>OPT_WRITEFUNCTION → ..</li>
+        <li>INFO_HTTP_CODE → ..</li>
+        <li>INFO_CONTENT_TYPE → ..</li>
+        <li>CURLE_OK → value returned by Curl.perform() on success</li>
+        <li>VERSION_MAJOR → Integer major version</li>
+        <li>VERSION_MINOR → integer minor version</li>
+        <li>WriteMemory → constant value</li>
+        <li>strerror(x) → returns a string message corresponding to error code x, where x is returned by Curl.perform()</li>
+      </ul><br><br>
+      The constant values are used to specify which option to set or which info to get when using
+      setopt() and getinfo() functions.
+      <br><br>
+      Example
+      <br>
+      <pre class="plutoniumcode"><span class="keyword2">import</span> <span class="id">libcurl</span> <span class="keyword2">as</span> <span class="id">lc</span>
+<span class="keyword2">import</span> <span class="id">std</span><span class="operator">&#47;</span><span class="id">algo</span><span class="operator">&#46;</span><span class="id">plt</span>
+<span class="keyword1">var</span> <span class="id">curl</span> <span class="operator">&#61;</span> <span class="id">lc</span><span class="operator">&#46;</span><span class="id">Curl</span>()
+<span class="id">curl</span><span class="operator">&#46;</span><span class="id">setopt</span>(<span class="id">lc</span><span class="operator">&#46;</span><span class="id">OPT_URL</span>,<span class="string">&quot;https://www.google.com&quot;</span>)
+<span class="id">curl</span><span class="operator">&#46;</span><span class="id">setopt</span>(<span class="id">lc</span><span class="operator">&#46;</span><span class="id">OPT_FOLLOWLOCATION</span>,<span class="num">1</span>)
+<span class="id">curl</span><span class="operator">&#46;</span><span class="id">setopt</span>(<span class="id">lc</span><span class="operator">&#46;</span><span class="id">OPT_WRITEFUNCTION</span>,<span class="id">lc</span><span class="operator">&#46;</span><span class="id">WriteMemory</span>)
+<span class="comment">#use default WriteMemory function</span>
+<span class="comment">#it comes with the module</span>
+<span class="keyword1">var</span> <span class="id">res</span> <span class="operator">&#61;</span> <span class="id">curl</span><span class="operator">&#46;</span><span class="id">perform</span>()
+<span class="keyword1">if</span>(<span class="id">res</span> <span class="operator">&#33;&#61;</span> <span class="id">lc</span><span class="operator">&#46;</span><span class="id">CURLE_OK</span>) <span class="comment">#error occurred</span>
+{
+    <span class="id">println</span>(<span class="id">lc</span><span class="operator">&#46;</span><span class="id">strerror</span>(<span class="id">res</span>))
+    <span class="id">exit</span>()
+}
+<span class="comment">#request was successful</span>
+<span class="comment">#curl.data stores response data as bytearray</span>
+<span class="comment">#decode it as ascii bytes, only do this when response is text</span>
+<span class="comment">#even if the text is utf8 it will be atleast printed correctly</span>
+<span class="keyword1">var</span> <span class="id">str</span> <span class="operator">&#61;</span> <span class="id">algo::decodeASCII</span>(<span class="id">curl</span><span class="operator">&#46;</span><span class="id">data</span>)
+<span class="id">println</span>(<span class="id">str</span>)</pre>
+<br>
+      The above example fetches the url “https://www.google.com” .The assumption here is that
+      google will return a text/html response. You can check the HTTP code and content type of
+      response using getinfo() if you want to go more advanced. Also, there is no cleanup
+      method in curl object .The cleanup is done automatically by the module when the object
+      deletor __del__() is called.
+<br><br>
+        <button onclick="prevPage()" class="btn btn-primary float-start">Previous</button>
+
+        <br>
+        <br>
+    </div>
+</body>
+</html>

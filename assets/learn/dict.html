@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plutonium Programming Language</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font AweSome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"5
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 1) BootStrap Link 2) JS link to use Bootstrap Functionality 3)  CSS Stylesheets Link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="pageIndex.js"></script>
+    <script>
+      var currPage = -1;
+      function redirect(url)
+      {
+        window.location.href = url;
+      }
+      function addLinks()
+      {
+        var div = document.getElementById('sidebarlinks');
+        var total = pageIndex["total"];
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        console.log( page );
+        for(var i=0;i<total;i++)
+        {
+          if(page == pageIndex[i][1])
+            currPage = i;
+          const link = document.createElement("a");
+          link.innerHTML = pageIndex[i][0];
+          link.href = pageIndex[i][1];
+          link.classList.add("sidebarlink");
+          const br = document.createElement("br");
+          div.appendChild(link);
+          div.appendChild(br);
+        }
+      }
+      function nextPage()
+      {
+        var i = currPage+1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+      function prevPage()
+      {
+        var i = currPage-1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+    </script>
+  </head>
+  <style>
+body{
+  font-family: "Montserrat";
+}
+#Tittle{
+
+  background-color: #5D3891;
+  color: #ffff;
+}
+.R1{
+  background-color: #5D3891;
+}
+
+
+/* Navbar */
+
+.navbar{
+
+  /* position: absolute; */
+
+}
+h1,h2,h3,i
+{
+  color: black;
+}
+body
+{
+  color: #8f8f8f;
+
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin-left: 1rem; */
+}
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:  "Montserrat";
+  font-weight: 300;
+}
+
+
+p{
+  color: #8f8f8f;
+
+}
+
+.plutoniumcode
+{
+  color:white;
+  min-width:50%;
+}
+
+.icon{
+  color: #000;
+  margin-bottom: 1rem;
+}
+#sidebarlinks a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+#sidebarlinks a:hover{
+  background-color: #555;
+  color: white;
+}
+
+  </style>
+  <body onload="addLinks()">
+
+    <section id="Tittle">
+      <div class="container-fluid">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <a class="navbar-brand" href="/index.html">Plutonium</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/downloads">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/learn">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contacts.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Topics</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="sidebarlinks">
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container" style="text-align: justify;">
+      <br>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i style="color:white" class="fa-solid fa-align-justify"></i> Table of Contents
+      </button><br><br><br>
+      <h1>Dictionaries</h1><br>
+Dictionaries are associative containers which means the data is stored as key value pairs.
+The keys must be unique. The values are mapped to unique keys and these keys are used
+to access or modify the data. To access data from a dictionary you use the index operator
+and provide it the key as index. <br><br>
+Example:<br>
+<pre class="plutoniumcode"><span class="keyword1">var</span> <span class="id">car</span> <span class="operator">&#61;</span> {<span class="string">&quot;brand&quot;</span>: <span class="string">&quot;Toyota&quot;</span>,<span class="string">&quot;color&quot;</span>: <span class="string">&quot;black&quot;</span>,<span class="string">&quot;model&quot;</span>:<span class="num">2012</span>}
+<span class="id">println</span>(<span class="id">car</span>[<span class="string">&quot;brand&quot;</span>])
+<span class="id">println</span>(<span class="id">car</span>[<span class="string">&quot;model&quot;</span>])
+<span class="id">println</span>(<span class="id">car</span>[<span class="string">&quot;color&quot;</span>])</pre>
+<br><br>
+In the above example strings are used as keys but you can use any type as a key. Also
+note that the index operator [] is used to access data from the dictionary. Dictionaries are
+also passed by reference. You can check if two dictionary objects point to same memory
+using is operator.
+<br><br>
+Dictionary object also has some member functions.<br><br>
+<ul>
+<li>emplace(key,val) adds a new pair to dictionary.</li>
+    <li>hasKey(key) returns true if key is present in dictionary.</li>
+        <li> erase(key) erases a key value pair from Dictionary</li>
+</ul>
+<br><br>
+        <button onclick="prevPage()" class="btn btn-primary float-start">Previous</button>
+        <button onclick="nextPage()" class="btn btn-primary float-end">Next</button>
+        <br>
+        <br>
+    </div>
+</body>
+</html>

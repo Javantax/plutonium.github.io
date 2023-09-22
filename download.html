@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plutonium Programming Language</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font AweSome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"5
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 1) BootStrap Link 2) JS link to use Bootstrap Functionality 3)  CSS Stylesheets Link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function redirect(url)
+      {
+        window.location.href = url;
+      }
+    </script>
+  </head>
+  <style>
+body{
+  font-family: "Montserrat";
+}
+#Tittle{
+
+  background-color: #5D3891;
+  color: #ffff;
+}
+.R1{
+  background-color: #5D3891;
+}
+
+
+/* Navbar */
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin-left: 1rem; */
+}
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:  "Montserrat";
+  font-weight: 300;
+}
+
+h1{
+
+  font-family: "Montserrat";
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+h2{
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+h3{
+  font-family: "Ubuntu";
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+p{
+  color: #8f8f8f;
+
+}
+
+
+
+.icon{
+  color: #000;
+  margin-bottom: 1rem;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.tg {
+  border-collapse: collapse;
+  border-color: #ccc;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin: auto;
+}
+.tg .tg-dt5f {
+  border-color: inherit;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid black;
+}
+.tg th {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  border: 1px solid black;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 20px 20px;
+  word-break: normal;
+}
+table,th,td
+{
+    border: 1px solid black;
+}
+  </style>
+  <body>
+
+    <section id="Tittle">
+      <div class="container-fluid">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <a class="navbar-brand" href="index.html">Plutonium</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="assets\learn\index.html">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <br><br>
+    <br>
+<div class="container">
+    Binaries are available for Windows only. Linux users can build binaries from source code available at GitHub.
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <thead>
+          <tr>
+            <th>Filename<br></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:blue"><a href="plutonium-win32.zip">plutonium-win32.zip</a></td>
+          </tr>
+                    <tr>
+            <td style="color:blue"><a href="plutonium-win32-installer.zip">plutonium-win32-installer.zip</a></td>
+          </tr>
+          <tr>
+            <td style="color:blue"><a href="plutonium-win64.zip">plutonium-win64.zip</a></td>
+          </tr>
+                              <tr>
+            <td style="color:blue"><a href="plutonium-win64-installer.zip">plutonium-win64-installer.zip</a></td>
+          </tr>
+        </tbody>
+        </table>
+
+</div>
+</body>
+</html>

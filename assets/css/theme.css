@@ -1,0 +1,48 @@
+@font-face {
+    font-family: JetBrainsMonoThin;
+    src: url(JetBrainsMono-Thin.ttf);
+  }
+.plutoniumcode
+{
+    background-color: rgb(32,32,29);
+    color: #ffffff;
+    width: fit-content;
+    font-family: JetBrainsMonoThin;
+    font-size: 13px;
+    border-radius: 2%;
+    padding: 2%;
+
+}
+.num
+{
+    color: rgb(255,127,80);
+}
+.macro
+{
+  color:rgb(247, 219, 148);
+}
+
+.hex
+{
+    color: rgb(255,127,80);
+}
+.string
+{
+    color: rgb(152, 241, 152);
+}
+.keyword1
+{
+    color: rgb(245, 3, 245);
+}
+.keyword2
+{
+    color: rgb(7, 176, 182);
+}
+.comment
+{
+    color: darkgray;
+}
+.bool
+{
+    color: rgb(255,127,80);
+}

@@ -1,0 +1,43 @@
+#code_snippet
+{
+	display: inline-block;
+	height: auto;
+	width: auto;
+	padding-right: 50px;
+	padding-bottom: 50px;
+	padding-left: 5px;
+	background-color: rgb(32,32,29);
+	font-family: monospace;
+	font-size: 16px;
+	color: #f1f1f1;
+	margin-left: 50px;
+	border-radius: 5%;
+}
+#code
+{
+	color: #f1f1f1;
+}
+#comment
+{
+	color: grey;
+}
+#keyword
+{
+	color: rgb(184, 84, 212);
+}
+#num
+{
+	color: orange;
+}
+#str
+{
+	color: #8EC160;
+}
+#identifier
+{
+	color: #f1f1f1;
+}
+#function
+{
+	color: rgb(102, 132, 225);
+}

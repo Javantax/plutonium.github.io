@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plutonium Programming Language</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font AweSome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"5
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 1) BootStrap Link 2) JS link to use Bootstrap Functionality 3)  CSS Stylesheets Link -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="pageIndex.js"></script>
+    <script>
+      var currPage = -1;
+      function redirect(url)
+      {
+        window.location.href = url;
+      }
+      function addLinks()
+      {
+        var div = document.getElementById('sidebarlinks');
+        var total = pageIndex["total"];
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        console.log( page );
+        for(var i=0;i<total;i++)
+        {
+          if(page == pageIndex[i][1])
+            currPage = i;
+          const link = document.createElement("a");
+          link.innerHTML = pageIndex[i][0];
+          link.href = pageIndex[i][1];
+          link.classList.add("sidebarlink");
+          const br = document.createElement("br");
+          div.appendChild(link);
+          div.appendChild(br);
+        }
+      }
+      function nextPage()
+      {
+        var i = currPage+1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+      function prevPage()
+      {
+        var i = currPage-1;
+        var href = pageIndex[i][1];
+        window.location.href = href;
+      }
+    </script>
+  </head>
+  <style>
+body{
+  font-family: "Montserrat";
+}
+#Tittle{
+
+  background-color: #5D3891;
+  color: #ffff;
+}
+.R1{
+  background-color: #5D3891;
+}
+
+
+/* Navbar */
+
+.navbar{
+
+  /* position: absolute; */
+
+}
+h1,h2,h3,i
+{
+  color: black;
+}
+body
+{
+  color: #8f8f8f;
+
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin-left: 1rem; */
+}
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:  "Montserrat";
+  font-weight: 300;
+}
+
+
+p{
+  color: #8f8f8f;
+
+}
+
+.plutoniumcode
+{
+  color:white;
+  min-width:50%;
+}
+
+.icon{
+  color: #000;
+  margin-bottom: 1rem;
+}
+#sidebarlinks a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+#sidebarlinks a:hover{
+  background-color: #555;
+  color: white;
+}
+
+  </style>
+  <body onload="addLinks()">
+
+    <section id="Tittle">
+      <div class="container-fluid">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <a class="navbar-brand" href="/index.html">Plutonium</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/downloads">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/learn">Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contacts.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Topics</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="sidebarlinks">
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container" style="text-align: justify;">
+      <br>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i style="color:white" class="fa-solid fa-align-justify"></i> Table of Contents
+      </button><br><br><br>
+      <h1>Error handling</h1>
+      <br>
+      Plutonium is a managed language which means that there is no undefined behavior and
+      errors are reported as soon as they occur along with their line number. However
+      sometimes you know that an error may occur and you want to execute some other code in
+      case an error occurs instead of the interpreter just showing the error and exiting. Basically
+      you don’t want your program to blow up and want it to do something to tackle an error. Error handling is supported by Plutonium. You can
+      use try catch statement to handle errors. However, remember that we are talking about
+      runtime errors. You cannot catch Syntax Errors in your code.
+      The code that might throw errors is placed inside the try block and catch block has the
+      code that you want to run in case an error occurs.<br><br>
+       There are some global classes already defined by plutonium.
+      These are called error classes. There is a base class named <b>Error</b> and all other error classes are derived from it. When an error is thrown it 
+      is a specific error. For example,<b>TypeError</b> is different from <b>MathError</b>. The base class <b>Error</b> 
+      has only one public member <b>msg</b>. As all other error classes are derived from it so they also have this member.
+      <br><br>Example<br>
+      <pre class="plutoniumcode"><span class="keyword1">try</span>
+{
+    <span class="id">print</span>(<span class="string">&quot;Enter a: &quot;</span>)
+    <span class="keyword1">var</span> <span class="id">a</span> <span class="operator">&#61;</span> <span class="id">int</span>(<span class="id">input</span>())
+    <span class="id">print</span>(<span class="string">&quot;Enter b: &quot;</span>)
+    <span class="keyword1">var</span> <span class="id">b</span> <span class="operator">&#61;</span> <span class="id">int</span>(<span class="id">input</span>())
+    <span class="id">println</span>(<span class="id">a</span><span class="operator">&#47;</span><span class="id">b</span>)
+}
+<span class="keyword1">catch</span>(<span class="id">err</span>)
+{
+    <span class="id">println</span>(<span class="string">&quot;caught error!&quot;</span>)
+    <span class="comment"># err is nothing but an object of any one of the error classes</span>
+    <span class="comment"># err will always have a member msg</span>
+    <span class="id">println</span>(<span class="id">err</span><span class="operator">&#46;</span><span class="id">msg</span>)
+    <span class="id">println</span>(<span class="id">err</span>) <span class="comment"># should print MathError object</span>
+
+}
+<span class="id">println</span>(<span class="string">&quot;all good&quot;</span>)
+</pre>
+<br><br>
+Try entering 0 when asked to input b
+You would get the following output<br><br>
+<pre class="plutoniumcode">Enter a: 10
+Enter b: 0
+caught error!
+Error division by zero
+&lt;MathError Object&gt;
+</pre>
+<br><br>
+In the above example <b>MathError</b> was thrown by division operator. Plutonium code can throw other kinds of errors too.
+For example, an <b>ImportError</b> is thrown when there is an issue importing a module. Every runtime error has a class of it's own.
+<br><br>
+<table class="table table-bordered table-responsive">
+ <tr><th>Name</th></tr>
+  <tr><td>Error</td></tr>
+ <tr><td>TypeError</td></tr>
+ <tr><td>ValueError</td></tr>
+ <tr><td>ImportError</td></tr>
+ <tr><td>MaxRecursionError</td></tr>
+ <tr><td>FileIOError</td></tr>
+ <tr><td>FileOpenError</td></tr>
+ <tr><td>FileSeekError</td></tr>
+ <tr><td>MathError</td></tr>
+ <tr><td>ArgumentError</td></tr>
+ <tr><td>OverflowError</td></tr>
+ <tr><td>KeyError</td></tr>
+ <tr><td>NameError</td></tr>
+ <tr><td>ThrowError</td></tr>
+ <tr><td>AccessError</td></tr>
+ <tr><td>IndexError</td></tr>
+</table>
+<br>
+Error classes are global variables defined with same names as above. You can also manually throw an error of any type using
+throw statement.
+<br><br>Consider the following example<br><br>
+<pre class="plutoniumcode"><span class="keyword1">try</span>
+{
+    <span class="keyword1">var</span> <span class="id">i</span> <span class="operator">&#61;</span> <span class="id">input</span>(<span class="string">&quot;Enter an integer or float: &quot;</span>)
+    <span class="keyword1">if</span>(<span class="operator">&#33;</span><span class="id">isnumeric</span>(<span class="id">i</span>)) <span class="comment"># string can not be converted to a float or integer</span>
+      <span class="keyword1">throw</span> <span class="id">ValueError</span>(<span class="string">&quot;Invalid Input!&quot;</span>)
+    <span class="id">i</span> <span class="operator">&#61;</span> <span class="id">tonumeric</span>(<span class="id">i</span>)
+    <span class="comment"># proceeed</span>
+}
+<span class="keyword1">catch</span>(<span class="id">err</span>)
+{
+    <span class="id">println</span>(<span class="id">err</span>)
+    <span class="id">println</span>(<span class="id">err</span><span class="operator">&#46;</span><span class="id">msg</span>)
+}</pre>
+<br><br>
+Output<br>
+<pre class="plutoniumcode">Enter an integer or float: no
+&lt;ValueError Object&gt;
+Invalid Input!</pre>
+<br><br>
+In the above example a <b>ValueError</b> was thrown by throw statement. The throw statement
+takes an object of any error class.
+<br><br>
+        <button onclick="prevPage()" class="btn btn-primary float-start">Previous</button>
+        <button onclick="nextPage()" class="btn btn-primary float-end">Next</button>
+
+        <br>
+        <br>
+    </div>
+</body>
+</html>
